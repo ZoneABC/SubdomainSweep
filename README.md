@@ -80,4 +80,4 @@ This script is intended for **legitimate testing** only. Please ensure you have 
 
 ## 📝 License
 
-MIT License
+GPL-3.0 
