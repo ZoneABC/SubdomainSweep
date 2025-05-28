@@ -3,7 +3,6 @@
 A fast and concurrent Bash tool to discover and validate subdomains via crt.sh with HTTP/HTTPS checks.
 A Bash script to fetch all subdomains of a given domain from [crt.sh](https://crt.sh), deduplicate them, and check their HTTP(S) availability using concurrent `curl` requests.
 
----
 
 ## 📦 Features
 
@@ -16,7 +15,6 @@ A Bash script to fetch all subdomains of a given domain from [crt.sh](https://cr
   - `https_200.txt` — valid domains
   - `https_failed.txt` — failed domains and status codes
 
----
 
 ## 🛠 Requirements
 
@@ -30,7 +28,6 @@ You can install dependencies on Debian/Ubuntu via:
 sudo apt update && sudo apt install curl jq -y
 ```
 
----
 
 ## 🚀 Usage
 
@@ -48,7 +45,6 @@ You can configure concurrency, delay, and timeout via environment variables:
 MAX_CONCURRENT=10 SLEEP_INTERVAL=1 CONNECT_TIMEOUT=5 ./check_domains.sh example.com
 ```
 
----
 
 ## ⚙️ Configuration Options
 
@@ -58,14 +54,11 @@ MAX_CONCURRENT=10 SLEEP_INTERVAL=1 CONNECT_TIMEOUT=5 ./check_domains.sh example.
 | `SLEEP_INTERVAL` | Sleep between launching concurrent batches   | `2`     |
 | `CONNECT_TIMEOUT`| Max seconds to wait for each curl connection | `3`     |
 
----
 
 ## 📂 Output Files
 
 - `https_200.txt` — domains where HTTP or HTTPS returned `200 OK`
 - `https_failed.txt` — domains with non-200 status and the codes
-
----
 
 ## 📌 Example Output
 
@@ -74,19 +67,16 @@ MAX_CONCURRENT=10 SLEEP_INTERVAL=1 CONNECT_TIMEOUT=5 ./check_domains.sh example.
 [progress: 2/20] mail.example.com ❌ (https:000 / http:404)
 ```
 
----
 
 ## 🧹 Temporary Files
 
 The script creates temporary files to store raw and deduplicated domain lists. These are automatically cleaned up after execution.
 
----
 
 ## 🔒 Disclaimer
 
 This script is intended for **legitimate testing** only. Please ensure you have permission to scan the domains you test.
 
----
 
 ## 📝 License
 
