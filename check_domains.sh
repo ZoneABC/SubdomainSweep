@@ -38,8 +38,8 @@ test_domain() {
     domain="$1"
     idx="$2"
 
-    https_code=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout "$CONNECT_TIMEOUT" "https://$domain")
-    http_code=$(curl -s -o /dev/null -w "%{http_code}" --connect-timeout "$CONNECT_TIMEOUT" "http://$domain")
+    https_code=$(curl -s -o /dev/null -w "%{http_code}" --max-time "$CONNECT_TIMEOUT" --connect-timeout "$CONNECT_TIMEOUT" "https://$domain")
+    http_code=$(curl -s -o /dev/null -w "%{http_code}" --max-time "$CONNECT_TIMEOUT" --connect-timeout "$CONNECT_TIMEOUT" "http://$domain")
 
     if [ "$https_code" = "200" ] || [ "$http_code" = "200" ]; then
         echo "[progress: $idx/$TOTAL] $domain ✅ (https:$https_code / http:$http_code)"
